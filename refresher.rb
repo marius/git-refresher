@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# We need this so logs show up in docker logs in time
+$stdout.sync = true
+
 require 'date'
 
 # Globally set some ssh parameters for git
