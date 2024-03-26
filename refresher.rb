@@ -43,5 +43,6 @@ loop do
     exit 1
   end
 
+  puts 'Sleeping for 1 day'
   sleep 86_400
 end
