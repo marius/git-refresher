@@ -24,8 +24,7 @@ end
 
 # Function to calculate if 58 days have passed since the last commit
 def time_to_commit?
-  last_commit_date_str = `git log -1 --format=%cd`
-  last_commit_date = Date.parse(last_commit_date_str)
+  last_commit_date = Date.parse(`git log -1 --format=%cd`)
   (Date.today - last_commit_date).to_i >= 58
 end
 
