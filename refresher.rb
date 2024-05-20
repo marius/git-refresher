@@ -22,10 +22,10 @@ def perform_git_operations
   system 'git push origin gh_refresh', exception: true
 end
 
-# Function to calculate if 58 days have passed since the last commit
+# Function to calculate if 52 days have passed since the last commit
 def time_to_commit?
   last_commit_date = Date.parse(`git log -1 --format=%cd`)
-  (Date.today - last_commit_date).to_i >= 58
+  (Date.today - last_commit_date).to_i >= 52
 end
 
 system "git clone #{ENV['GIT_REPOSITORY']} repo", exception: true unless File.directory? 'repo'
