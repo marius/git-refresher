@@ -16,7 +16,8 @@ def perform_git_operations
   system 'git checkout gh_refresh || git checkout -b gh_refresh', exception: true
 
   # Perform an empty commit
-  system 'git commit --allow-empty -m "Refresh branch"', exception: true
+  system 'git -c user.name=Refresher -c user.email=refresher@example.com commit --allow-empty -m "Refresh branch"',
+         exception: true
 
   # Push the branch to the remote repository
   system 'git push origin gh_refresh', exception: true
