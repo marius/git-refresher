@@ -8,7 +8,7 @@ Generate a key and add the public key to your repository as a deploy key with wr
 
 Run the container (make sure to use the SSH URL for your repository (e.g. `git@github.com:YOUR_REPO.git`)):
 
-`docker run -it --rm --name git-refresher -e GIT_REPOSITORY=YOUR_REPO git-refresher`
+`docker run -it --rm --name git-refresher -e GIT_REPOSITORY=YOUR_REPO -e GIT_DEPLOY_KEY=PATH_TO_KEY git-refresher`
 
 or use `docker-compose`:
 
@@ -24,6 +24,7 @@ services:
     image: git-refresher
     environment:
       - GIT_REPOSITORY=YOUR_REPO
+      - GIT_DEPLOY_KEY=PATH_TO_KEY
     secrets:
       - postfix-sendgrid_deploy_key
 ```

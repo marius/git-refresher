@@ -8,7 +8,7 @@ require 'date'
 
 # Globally set some ssh parameters for git
 ENV['GIT_SSH_COMMAND'] =
-  'ssh -i /run/secrets/postfix-sendgrid_deploy_key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+  "ssh -i #{ENV['GIT_DEPLOY_KEY']} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 # Function to perform the git operations
 def perform_git_operations
